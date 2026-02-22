@@ -3,8 +3,8 @@
 ## Member
 - s6702041511233 Thananan Detmongkhonsri 
 - s670204151
-- s6702041511063 Phachara Piasai
 - s670204151
+- s6702041511195 Setthanan Thipsangwan
 - s670204151
 
 
