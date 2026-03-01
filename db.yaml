@@ -1,6 +1,6 @@
 services:
-  68-s3-db:
-    image: postgres:latest
+  s3db:
+    image: postgres:16
     container_name: 68-s3-database
     restart: unless-stopped
     environment:
