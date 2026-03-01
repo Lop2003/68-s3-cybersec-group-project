@@ -1,0 +1,22 @@
+include:
+  - db.yaml
+  - admin.yaml
+
+services:
+  s3app:
+    image: prawee/strapi:latest
+    container_name: 68-s3-app
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USER}
+      DATABASE_PASSWORD: ${DATABASE_PASS}
+    ports:
+      - "${APP_PORT}:1337"
+    depends_on:
+      - s3db

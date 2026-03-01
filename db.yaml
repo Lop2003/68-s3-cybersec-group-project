@@ -1,0 +1,16 @@
+services:
+  s3db:
+    image: postgres:16
+    container_name: 68-s3-database
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: "${DATABASE_USER}"
+      POSTGRES_PASSWORD: "${DATABASE_PASS}"
+      POSTGRES_DB: "${DATABASE_NAME}"
+    ports:
+      - "${DB_PORT_EXTERNAL}:${DATABASE_PORT}"
+    volumes:
+      - s3db-data:/var/lib/postgresql/data
+
+volumes:
+  s3db-data:
