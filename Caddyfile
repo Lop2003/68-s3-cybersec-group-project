@@ -1,0 +1,9 @@
+www.ilovemyjob.com {
+	tls internal
+	reverse_proxy s3app:1337
+}
+
+admin.ilovemyjob.com {
+	tls internal
+	reverse_proxy s3admin:80
+}
