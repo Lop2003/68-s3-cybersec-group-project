@@ -3,8 +3,10 @@ services:
     image: caddy:latest
     container_name: 68-s3-web
     restart: unless-stopped
+    env_file:
+      - .env
     ports:
-      - "443:443"
+      - "${WEB_PORT}:443"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
     depends_on:
