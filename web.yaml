@@ -1,0 +1,13 @@
+services:
+  s3web:
+    image: caddy:latest
+    container_name: 68-s3-web
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "${WEB_PORT}:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    depends_on:
+      - s3app
